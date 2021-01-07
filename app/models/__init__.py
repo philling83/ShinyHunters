@@ -3,9 +3,9 @@ from .user import User
 from .game import Game
 from .method import Method
 from .pokeball import Pokeball
-from .follow import Follow
-from .pokemon_team import Pokemon_Team
-from .pokemon_type import Pokemon_Type
+from .follower import followers
+from .pokemon_team import pokemon_teams
+from .pokemon_type import pokemon_types
 from .pokemon import Pokemon
 from .region import Region
 from .shiny_pokemon import Shiny_Pokemon

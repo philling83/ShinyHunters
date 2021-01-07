@@ -3,7 +3,7 @@ from datetime import datetime
 
 
 class Shiny_Pokemon(db.Model):
-    __tablename__ = "shiny_pokemon"
+    __tablename__ = "shiny_pokemons"
 
     id = db.Column(db.Integer, primary_key=True)
     encounters = db.Column(db.Integer, nullable=False)
@@ -17,7 +17,7 @@ class Shiny_Pokemon(db.Model):
     is_hidden_ability = db.Column(db.Boolean, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'),
                         nullable=False)
-    pokemon_id = db.Column(db.Integer, db.ForeignKey('pokemon.id'),
+    pokemon_id = db.Column(db.Integer, db.ForeignKey('pokemons.id'),
                            nullable=False)
     game_id = db.Column(db.Integer, db.ForeignKey('games.id'),
                         nullable=False)
