@@ -11,3 +11,4 @@ from .region import Region
 from .shiny_pokemon import Shiny_Pokemon
 from .team import Team
 from .type import Type
+from .comment import Comment
