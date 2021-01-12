@@ -1,14 +1,10 @@
+from app.models import db, Pokemon
 import requests
 
 pokemon = requests.get("https://pokeapi.co/api/v2/pokemon?limit=151&offset=0")
 
-data = pokemon.json()['results']
-
 list_of_sprites = []
 list_of_names = []
-
-# for x in data:
-#   print(x['name'].capitalize())
 
 for x in range(1, 152):
   pokemon = requests.get(f"https://pokeapi.co/api/v2/pokemon/{x}")
@@ -17,10 +13,16 @@ for x in range(1, 152):
   list_of_sprites.append(img)
   list_of_names.append(name.capitalize())
 
-# print(list_of_sprites)
-# print(list_of_names)
-def show():
-  for (a, b) in zip(list_of_sprites, list_of_names):
-    print([a, b])
+def seed_pokemons():
 
-show()
+    for (a, b) in zip(list_of_names, list_of_sprites):
+
+      a = Pokemon(name=a, sprite_url=b, region_id=1)
+
+      db.session.add(a)
+      db.session.commit()
+
+def undo_pokemons():
+
+    db.session.execute("TRUNCATE pokemons RESTART IDENTITY CASCADE;")
+    db.session.commit()

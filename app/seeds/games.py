@@ -68,5 +68,5 @@ def seed_games():
 
 def undo_games():
 
-    db.session.execute("TRUNCATE games;")
+    db.session.execute("TRUNCATE games RESTART IDENTITY CASCADE;")
     db.session.commit()

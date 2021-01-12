@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
+import Splash from "./components/SplashPage";
 import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
 import NavBar from "./components/NavBar";
@@ -29,6 +30,9 @@ function App() {
   return (
     <BrowserRouter>
       <NavBar setAuthenticated={setAuthenticated} />
+      <Route path="/">
+        <Splash />
+      </Route>
       <Route path="/login" exact={true}>
         <LoginForm
           authenticated={authenticated}
@@ -44,9 +48,9 @@ function App() {
       <ProtectedRoute path="/users/:userId" exact={true} authenticated={authenticated}>
         <User />
       </ProtectedRoute>
-      <ProtectedRoute path="/" exact={true} authenticated={authenticated}>
+      {/* <ProtectedRoute path="/" exact={true} authenticated={authenticated}>
         <h1>My Home Page</h1>
-      </ProtectedRoute>
+      </ProtectedRoute> */}
     </BrowserRouter>
   );
 }

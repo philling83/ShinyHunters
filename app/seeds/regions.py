@@ -25,5 +25,5 @@ def seed_regions():
 
 def undo_regions():
 
-    db.session.execute("TRUNCATE regions;")
+    db.session.execute("TRUNCATE regions RESTART IDENTITY CASCADE;")
     db.session.commit()

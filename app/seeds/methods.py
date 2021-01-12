@@ -33,5 +33,5 @@ def seed_methods():
 
 def undo_methods():
 
-    db.session.execute("TRUNCATE methods;")
+    db.session.execute("TRUNCATE methods RESTART IDENTITY CASCADE;")
     db.session.commit()
