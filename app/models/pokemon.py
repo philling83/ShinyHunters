@@ -17,7 +17,7 @@ class Pokemon(db.Model):
         return {
             "id": self.id,
             "name": self.name,
-            "sprite": self.sprite,
+            "sprite": self.sprite_url,
             "region_id": self.region_id,
             "shiny_pokemons": [shiny_pokemon.to_dict() for shiny_pokemon in self.shiny_pokemons],
             "types": [type.to_dict() for type in self.types],
