@@ -7,6 +7,7 @@ import NavBar from "./components/NavBar";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
+import Pokemons from "./components/Pokemons"
 import { authenticate } from "./services/auth";
 
 function App() {
@@ -31,8 +32,8 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route path="/team-builder">
-          <NavBar setAuthenticated={setAuthenticated} />
-          Hello
+          {/* <NavBar setAuthenticated={setAuthenticated} /> */}
+          <Pokemons />
         </Route>
         <Route eaxct path="/">
           <Splash />
