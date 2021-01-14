@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import * as pokemon_actions from '../store/pokemons'
+import PokemonCards from './PokemonCards'
 import Carousel from 'react-material-ui-carousel'
-import {Paper} from '@material-ui/core'
+// import {Paper} from '@material-ui/core'
 
 
 const Pokemons = () => {
 
     const dispatch = useDispatch()
-    // const pokemons = useSelector((state) => state.pokemons.pokemons)
+    const pokemons = useSelector((state) => state.pokemons)
     const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {
@@ -16,28 +17,24 @@ const Pokemons = () => {
         dispatch(pokemon_actions.allPokemons())
         setLoaded(true)
 
-    }, [dispatch])
-    // const pokemons
-
-    // (async () => {
-    //     const response = await fetch('/api/pokemons');
-    //     const pokemonObj = await response.json();
-    //     pokemons = pokemonObj.pokemons;
-    // })();
+    }, [])
 
     return (
         loaded && (
-
-            <div>hello</div>
+            <>
+            <Carousel>
+                {
+                    Object.keys(pokemons).map((id) => <PokemonCards pokemon={pokemons[id]} />)
+                }
+            </Carousel>
+            </>
         )
-    //     <Carousel>
-    //         {
-    //             pokemons.map( (pokemon, i) => <Item key={i} pokemon={pokemon} /> )
-    //         }
-    //     </Carousel>
-    // )
+        )
+    }
 
-    // function Item(props)
+
+export default Pokemons
+    // {/* function Item(props)
     // {
     //     return (
     //         <Paper>
@@ -45,8 +42,5 @@ const Pokemons = () => {
     //         </Paper>
     //     )
     // }
-    )
-}
-
-
-export default Pokemons
+    // )
+    // ) */}
