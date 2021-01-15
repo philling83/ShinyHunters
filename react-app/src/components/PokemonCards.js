@@ -5,7 +5,8 @@ import {Paper} from '@material-ui/core'
 const PokemonCards = (props) => {
 
     return (
-        <Paper>
+        <Paper elevation={3}>
+            <div>{props.pokemon.name}</div>
             <img src={props.pokemon.sprite} />
         </Paper>
     )

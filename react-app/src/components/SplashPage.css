@@ -1,4 +1,11 @@
-.splash_content-container {
+.splash-container {
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid black; */
+}
+
+.splash-container_image {
+    margin-top: 15px;
     width: 800px;
     height: 600px;
     /* border: 1px solid black; */

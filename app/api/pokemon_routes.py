@@ -9,5 +9,5 @@ pokemon_routes = Blueprint('pokemons', __name__)
 @pokemon_routes.route('/')
 # @login_required
 def pokemons():
-    pokemons = Pokemon.query.limit(3).all()
+    pokemons = Pokemon.query.all()
     return {'pokemons': [pokemon.to_dict() for pokemon in pokemons]}

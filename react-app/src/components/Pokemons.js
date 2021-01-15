@@ -11,6 +11,8 @@ const Pokemons = () => {
     const dispatch = useDispatch()
     const pokemons = useSelector((state) => state.pokemons)
     const [loaded, setLoaded] = useState(false);
+    const [autoPlay, setAutoPlay] = useState(false)
+    const [indicators, setIndicators] = useState(false)
 
     useEffect(() => {
 
@@ -22,7 +24,7 @@ const Pokemons = () => {
     return (
         loaded && (
             <>
-            <Carousel>
+            <Carousel autoPlay={autoPlay} indicators={indicators}>
                 {
                     Object.keys(pokemons).map((id) => <PokemonCards pokemon={pokemons[id]} />)
                 }

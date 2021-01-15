@@ -4,7 +4,9 @@ import "./SplashPage.css"
 
 const Splash = () => {
   return (
-    <div className="splash_content-container"></div>
+    <div className="splash-container">
+      <div className="splash-container_image"></div>
+    </div>
   );
 }
 

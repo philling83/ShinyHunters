@@ -1,0 +1,10 @@
+.banner {
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid black; */
+}
+
+.banner-logo {
+    height: 10%;
+    width: 10%;
+}
