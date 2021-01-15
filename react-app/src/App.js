@@ -32,7 +32,7 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <ProtectedRoute path="/team-builder">
+        <ProtectedRoute exact path="/team-builder" authenticated={authenticated}>
           {/* <NavBar setAuthenticated={setAuthenticated} /> */}
           <Banner />
           <Pokemons />
