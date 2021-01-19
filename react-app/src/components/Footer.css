@@ -1,0 +1,14 @@
+.footer-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    /* border: 1px solid black; */
+}
+
+.footer-container_icons {
+    margin: 10px;
+}
+
+.footer-container_icons:hover {
+    cursor: pointer;
+}

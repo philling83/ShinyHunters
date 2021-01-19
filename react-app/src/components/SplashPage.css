@@ -6,10 +6,7 @@
 
 .splash-container_image {
     margin-top: 15px;
-    width: 800px;
-    height: 600px;
+    width: 48%;
+    height: 48%;
     /* border: 1px solid black; */
-    background-image: url("../Assets/Pokedex.png");
-    background-size: cover;
-    background-position: center;
 }

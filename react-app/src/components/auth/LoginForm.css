@@ -1,0 +1,20 @@
+.login-form_container {
+    display: flex;
+    justify-content: center;
+    width: max-content;
+    /* border: 1px solid red; */
+    margin: 50px auto;
+}
+
+.login-form_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    width: 500px;
+    height: 700px;
+    /* border: 1px solid black; */
+}
+
+.login-form_email {
+    /* border: 1px solid black; */
+}

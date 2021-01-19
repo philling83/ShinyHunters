@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import { login } from "../../services/auth";
+import Paper from '@material-ui/core/Paper';
+import TextField from '@material-ui/core/TextField';
+import "./LoginForm.css"
 
 const LoginForm = ({ authenticated, setAuthenticated }) => {
   const [errors, setErrors] = useState([]);
@@ -26,38 +29,42 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
   };
 
   if (authenticated) {
-    return <Redirect to="/" />;
+    return <Redirect to="/app" />;
   }
 
   return (
-    <form onSubmit={onLogin}>
-      <div>
-        {errors.map((error) => (
-          <div>{error}</div>
-        ))}
-      </div>
-      <div>
-        <label htmlFor="email">Email</label>
-        <input
-          name="email"
-          type="text"
-          placeholder="Email"
-          value={email}
-          onChange={updateEmail}
-        />
-      </div>
-      <div>
-        <label htmlFor="password">Password</label>
-        <input
-          name="password"
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={updatePassword}
-        />
-        <button type="submit">Login</button>
-      </div>
-    </form>
+    <div className="login-form_container">
+      <Paper elevation={3} className="login-form_wrapper">
+        <form className="login-form" onSubmit={onLogin}>
+          <div>
+            {errors.map((error) => (
+              <div>{error}</div>
+            ))}
+          </div>
+          <div className="login-form_email">
+            {/* <TextField id="standard-basic" label="Email" type="email" value={email} onChange={updateEmail} /> */}
+            <input
+              name="email"
+              type="text"
+              placeholder="Email"
+              value={email}
+              onChange={updateEmail}
+            />
+          </div>
+          <div className="login-form_password">
+            {/* <TextField id="standard-basic" label="Password" type="password" value={password} onChange={updatePassword} /> */}
+            <input
+              name="password"
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={updatePassword}
+            />
+          </div>
+          <button type="submit">Login</button>
+        </form>
+      </Paper>
+    </div>
   );
 };
 

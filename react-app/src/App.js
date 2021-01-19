@@ -4,7 +4,9 @@ import Splash from "./components/SplashPage";
 import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
 import NavBar from "./components/NavBar";
+import LogoutButton from "./components/auth/LogoutButton"
 import Banner from "./components/Banner";
+import Footer from "./components/Footer"
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
@@ -39,7 +41,11 @@ function App() {
         </ProtectedRoute>
         <Route exact path="/">
           <Banner />
-          <Splash />
+          <Splash authenticated={authenticated}
+            setAuthenticated={setAuthenticated}/>
+          <LogoutButton authenticated={authenticated}
+            setAuthenticated={setAuthenticated}/>
+          <Footer />
         </Route>
         <Route path="/login" exact={true}>
           <LoginForm
@@ -56,9 +62,11 @@ function App() {
         <ProtectedRoute path="/users/:userId" exact={true} authenticated={authenticated}>
           <User />
         </ProtectedRoute>
-        {/* <ProtectedRoute path="/" exact={true} authenticated={authenticated}>
-          <h1>My Home Page</h1>
-        </ProtectedRoute> */}
+        <ProtectedRoute path="/app" exact={true} authenticated={authenticated}>
+          <NavBar />
+          <LogoutButton authenticated={authenticated}
+            setAuthenticated={setAuthenticated} />
+        </ProtectedRoute>
       </Switch>
     </BrowserRouter>
   );

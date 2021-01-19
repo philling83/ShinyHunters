@@ -1,14 +1,19 @@
 import React from 'react';
 import {Paper} from '@material-ui/core'
+import "./PokemonCards.css"
 
 
 const PokemonCards = (props) => {
 
+    function sayHello() {
+        alert('Hello!');
+    }
+
     return (
-        <Paper elevation={3}>
+        <div className='pokemon-cards' onClick={sayHello}>
             <div>{props.pokemon.name}</div>
-            <img src={props.pokemon.sprite} />
-        </Paper>
+            <img src={props.pokemon.sprite} alt=""/>
+        </div>
     )
 }
 

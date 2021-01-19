@@ -1,0 +1,19 @@
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
+}
+
+.navbar-logo {
+    height: 10%;
+    width: 10%;
+    /* border: 1px solid black */
+}
+
+.team-builder_nav {
+    position: absolute;
+    right: 10px;
+    top: 31px;
+    /* border: 1px solid black; */
+}
