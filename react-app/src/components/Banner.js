@@ -9,8 +9,10 @@ const Banner = () => {
     return (
         <>
         {/* <AppBar> */}
-            <div className="banner">
-                <img className="banner-logo" src={require("../Assets/logo.png")} alt="" />
+            <div >
+                <a className="banner" href="/app">
+                    <img className="banner-logo" src={require("../Assets/logo.png")} alt="" />
+                </a>
             </div>
             {/* <Typography variant="h6">
                 News

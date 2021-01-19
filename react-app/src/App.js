@@ -11,6 +11,7 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
 import Pokemons from "./components/Pokemons"
+import PokemonStage from "./components/PokemonStage"
 import { authenticate } from "./services/auth";
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
           {/* <NavBar setAuthenticated={setAuthenticated} /> */}
           <Banner />
           <Pokemons />
+          <PokemonStage />
         </ProtectedRoute>
         <Route exact path="/">
           <Banner />
