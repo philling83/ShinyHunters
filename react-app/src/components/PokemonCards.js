@@ -5,12 +5,12 @@ import "./PokemonCards.css"
 
 const PokemonCards = (props) => {
 
-    function sayHello() {
-        alert('Hello!');
-    }
+    // function sayHello() {
+    //     alert('Hello!');
+    // }
 
     return (
-        <div className='pokemon-cards' onClick={sayHello}>
+        <div className='pokemon-cards'>
             <div>{props.pokemon.name}</div>
             <img src={props.pokemon.sprite} alt=""/>
         </div>
