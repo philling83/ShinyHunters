@@ -13,6 +13,7 @@ import User from "./components/User";
 import Pokemons from "./components/Pokemons"
 import PokemonStage from "./components/PokemonStage"
 import { authenticate } from "./services/auth";
+import { DragDropContext } from 'react-beautiful-dnd'
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -32,22 +33,28 @@ function App() {
     return null;
   }
 
+  const onDragEnd = result => {
+
+  }
+
   return (
     <BrowserRouter>
       <Switch>
         <ProtectedRoute exact path="/team-builder" authenticated={authenticated}>
           {/* <NavBar setAuthenticated={setAuthenticated} /> */}
-          <Banner />
-          <Pokemons />
-          <PokemonStage />
+            <Banner />
+          <DragDropContext onDragEnd={onDragEnd}>
+            <Pokemons />
+            <PokemonStage />
+          </DragDropContext>
         </ProtectedRoute>
         <Route exact path="/">
           <Banner />
           <Splash authenticated={authenticated}
             setAuthenticated={setAuthenticated}/>
-          <LogoutButton authenticated={authenticated}
-            setAuthenticated={setAuthenticated}/>
-          <Footer />
+          {/* <LogoutButton authenticated={authenticated}
+            setAuthenticated={setAuthenticated}/> */}
+          {/* <Footer /> */}
         </Route>
         <Route path="/login" exact={true}>
           <LoginForm

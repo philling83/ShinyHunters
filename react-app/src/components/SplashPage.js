@@ -5,6 +5,7 @@ import Modal from '@material-ui/core/Modal';
 import LoginForm from "./auth/LoginForm"
 import SignUpForm from "./auth/SignUpForm"
 import LogoutButton from './auth/LogoutButton';
+import Button from '@material-ui/core/Button';
 import "./SplashPage.css"
 
 const Splash = ({ authenticated, setAuthenticated }) => {
@@ -32,10 +33,19 @@ const Splash = ({ authenticated, setAuthenticated }) => {
     <>
     <div className="splash-container">
       <img className="splash-container_image" src={require("../Assets/Pokedex.png")} alt="" />
+      <div className="splash_auth-buttons">
+        <div className="splash_login-button">
+          <Button variant="outlined" color="primary" onClick={handleLoginOpen}>
+            Continue
+          </Button>
+        </div>
+        <div className="splash_signup-button">
+          <Button variant="outlined" color="primary" onClick={handleSignupOpen}>
+            New Adventure
+          </Button>
+        </div>
+      </div>
     </div>
-    <button type="button" onClick={handleLoginOpen}>
-      Login
-    </button>
     <Modal
       open={openLogin}
       onClose={handleLoginClose}
@@ -44,9 +54,6 @@ const Splash = ({ authenticated, setAuthenticated }) => {
     >
       <LoginForm authenticated={authenticated} setAuthenticated={setAuthenticated} />
     </ Modal>
-    <button type="button" onClick={handleSignupOpen}>
-      Sign Up
-    </button>
     <Modal
       open={openSignUp}
       onClose={handleSignupClose}

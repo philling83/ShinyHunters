@@ -1,7 +1,7 @@
 .splash-container {
     display: flex;
     justify-content: center;
-    /* border: 1px solid black; */
+    border: 1px solid black;
 }
 
 .splash-container_image {
@@ -9,4 +9,17 @@
     width: 48%;
     height: 48%;
     /* border: 1px solid black; */
+}
+
+.splash_auth-buttons {
+    display: flex;
+    position: absolute;
+    margin-left: 393px;
+    margin-top: 160px;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 275px;
+    height: 345px;
+    align-items: center;
+    justify-content: space-evenly;
 }
