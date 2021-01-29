@@ -1,0 +1,9 @@
+.team-builder_container {
+    background-image: url('./Assets/stadium.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}

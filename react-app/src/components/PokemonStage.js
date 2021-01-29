@@ -14,12 +14,12 @@ const PokemonStage = () => {
                 <div className="staging-area"
                 // innerRef={provided.innerRef} {...provided.droppableProps}
                 >
-                    <div className="staging-area-spot">Stage 1</div>
-                    <div className="staging-area-spot">Stage 2</div>
-                    <div className="staging-area-spot">Stage 3</div>
-                    <div className="staging-area-spot">Stage 4</div>
-                    <div className="staging-area-spot">Stage 5</div>
-                    <div className="staging-area-spot">Stage 6</div>
+                    <div id="staging-area-1" className="staging-area-spot"></div>
+                    <div id="staging-area-2" className="staging-area-spot"></div>
+                    <div id="staging-area-3" className="staging-area-spot"></div>
+                    <div id="staging-area-4" className="staging-area-spot"></div>
+                    <div id="staging-area-5" className="staging-area-spot"></div>
+                    <div id="staging-area-6" className="staging-area-spot"></div>
                     {/* {provided.placeholder} */}
                 </div>
             {/* )} */}

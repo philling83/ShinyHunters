@@ -25,27 +25,66 @@ const Pokemons = () => {
 
     }, [dispatch])
 
+    // const reorder = (list, startIndex, endIndex) => {
+    //     const result = Array.from(list);
+    //     const [removed] = result.splice(startIndex, 1);
+    //     result.splice(endIndex, 0, removed);
+
+    //     return result;
+    // };
+
     // const onDragEnd = result => {
-    //     //To do
+    //     // dropped outside the list
+    //     if (!result.destination) {
+    //     return;
+    //     }
+
+    //     const pokemons = reorder(
+    //     pokemons,
+    //     result.source.index,
+    //     result.destination.index
+    //     );
     // }
+
 
     return (
         loaded && (
             <>
-            <Droppable droppableId={pokemons.id} direction="horizontal">
-            {provided => (
-                <Carousel className="carousel" breakPoints={breakPoints} enableMouseSwipe={mouseSwipe} innerRef={provided.innerRef} {...provided.droppableProps}>
-                    {/* <div> */}
-                        {
-                            Object.values(pokemons).map((pokemon, index) => <PokemonCards key={pokemon.id} pokemon={pokemon} index={index} />)
-                        }
+            <Carousel className="carousel" breakPoints={breakPoints} showArrows={false} pagination={false}>
+                {
+                    Object.values(pokemons).map((pokemon, index) => <PokemonCards key={pokemon.id} pokemon={pokemon} index={index} />)
+                }
+            </Carousel>
+            {/* <DragDropContext onDragEnd={onDragEnd}> */}
+                {/* <Droppable droppableId="1" direction="vertical" type="pokemon-carousel"> */}
+                {/* {(provided) => ( */}
+                    {/* <div ref={provided.innerRef} {...provided.droppableProps}> */}
+                        {/* {provided.placeholder} */}
                     {/* </div> */}
-                </Carousel>
-            )}
-            </Droppable>
+                {/* )} */}
+                {/* </Droppable> */}
+            {/* </DragDropContext> */}
             </>
         )
     )
+    // return (
+    //     loaded && (
+    //         <>
+    //         <Droppable droppableId="1" direction="horizontal" type="pokemon-carousel">
+    //         {(provided) => (
+    //             <div ref={provided.innerRef} {...provided.droppableProps}>
+    //                 <Carousel className="carousel" breakPoints={breakPoints} enableMouseSwipe={mouseSwipe}>
+    //                     {
+    //                         Object.values(pokemons).map((pokemon, index) => <PokemonCards key={pokemon.id} pokemon={pokemon} index={index} />)
+    //                     }
+    //                 </Carousel>
+    //                 {provided.placeholder}
+    //             </div>
+    //         )}
+    //         </Droppable>
+    //         </>
+    //     )
+    // )
 }
 
 

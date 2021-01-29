@@ -2,12 +2,14 @@
     /* border: 1px solid black; */
     display: flex;
     flex-direction: row;
-    margin-top: 350px;
+    margin-top: 255px;
+    margin-left: 400px;
     /* position: absolute; */
-    justify-content: space-between
+    justify-content: space-between;
+    max-width: 50%;
 }
 
 .staging-area-spot {
     /* border: 1px solid red; */
-    margin: 0 70px;
+    /* margin: 0 70px; */
 }
