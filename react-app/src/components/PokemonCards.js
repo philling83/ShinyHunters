@@ -37,7 +37,7 @@ const PokemonCards = (props) => {
                 // <div {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
                     // <Paper>
                         <div className='carousel_pokemon-cards' onClick={addToTeam}>
-                            <div>{props.pokemon.name}</div>
+                            <div className="carousel_pokemon-title">{props.pokemon.name}</div>
                             <img src={props.pokemon.sprite} alt=""/>
                         </div>
                     // </Paper>

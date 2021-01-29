@@ -1,7 +1,30 @@
+.pokedex-power-button {
+    position: absolute;
+    height: 57.5px;
+    width: 57.5px;
+    margin-right: 633px;
+    margin-top: 33.75px;
+    border-radius: 50%;
+    border: 1px solid green;
+}
+
+.splash-container_logo {
+    position: absolute;
+    width: 15%;
+    height: 15%;
+    margin-left: -670px;
+    margin-top: 235px;
+}
+
+.pokedex-power-button:hover {
+    background-color: red;
+}
+
 .splash-container {
     display: flex;
     justify-content: center;
-    border: 1px solid black;
+    /* margin: auto; */
+    /* border: 1px solid black; */
 }
 
 .splash-container_image {

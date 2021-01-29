@@ -47,7 +47,7 @@ function App() {
           </div>
         </ProtectedRoute>
         <Route exact path="/">
-          <Banner />
+          {/* <Banner /> */}
           <Splash authenticated={authenticated}
             setAuthenticated={setAuthenticated}/>
           {/* <LogoutButton authenticated={authenticated}

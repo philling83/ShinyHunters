@@ -11,15 +11,14 @@ import "./SplashPage.css"
 import styled, { keyframes } from 'styled-components';
 import { fadeInDown } from 'react-animations';
 import { Flash } from 'react-animations';
+
 const FlashAnimation = keyframes`${Flash}`;
-const FlashDiv = styled.div`
-  animation: infinite 30s ${FlashAnimation};
+const FlashLogoDiv = styled.div`
+  animation: infinite 20s ${FlashAnimation};
 `;
 
-const fadeInDownAnimation = keyframes`${fadeInDown}`;
-
-const FadeInDownDiv = styled.div`
-  animation: 3s ${fadeInDownAnimation};
+const FlashAuthDiv = styled.div`
+  animation: infinite 20s ${FlashAnimation};
 `;
 
 const Splash = ({ authenticated, setAuthenticated }) => {
@@ -44,8 +43,13 @@ const Splash = ({ authenticated, setAuthenticated }) => {
   };
 
   const renderAuthButtons = () => {
+    let element2 = (
+      <FlashLogoDiv>
+        <img className="splash-container_logo" src={require("../Assets/logo2.png")} alt="" />
+      </FlashLogoDiv>
+    )
     let element = (
-      <FlashDiv>
+      <FlashAuthDiv>
         <div className="splash_auth-buttons">
           <div className="splash_login-button">
             <Button variant="outlined" color="secondary" onClick={handleLoginOpen}>
@@ -58,18 +62,20 @@ const Splash = ({ authenticated, setAuthenticated }) => {
             </Button>
           </div>
         </div>
-      </FlashDiv>
+      </FlashAuthDiv>
     )
+    ReactDOM.render(element2, document.getElementById('splash-container'))
     ReactDOM.render(element, document.getElementById('splash_auth-container'))
   }
 
 
   return (
     <>
-    <Button onClick={renderAuthButtons}>Yo</Button>
     <div className="splash-container">
+      <div className="pokedex-power-button" onClick={renderAuthButtons} />
       <img className="splash-container_image" src={require("../Assets/Pokedex.png")} alt="" />
       <div id='splash_auth-container' />
+      <div id='splash-container' />
     </div>
     <Modal
       open={openLogin}

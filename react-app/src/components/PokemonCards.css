@@ -6,6 +6,10 @@
     margin: 10px;
 }
 
+.carousel_pokemon-title {
+    color: white;
+}
+
 .staging-area_pokemon-cards {
     display: flex;
     align-items: center;
