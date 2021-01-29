@@ -11,13 +11,16 @@
     /* border: 1px solid black; */
 }
 
+#splash_auth-container {
+    position: absolute;
+    margin-left: 394px;
+    margin-top: 160px;
+}
+
 .splash_auth-buttons {
     display: flex;
-    position: absolute;
-    margin-left: 393px;
-    margin-top: 160px;
     flex-direction: column;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 275px;
     height: 345px;
     align-items: center;
