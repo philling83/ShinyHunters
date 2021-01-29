@@ -73,11 +73,11 @@ const Splash = ({ authenticated, setAuthenticated }) => {
     <>
     <div className="splash-container">
       <div className="pokedex-power-button" onClick={renderAuthButtons} />
-      <img className="splash-container_image" src={require("../Assets/Pokedex.png")} alt="" />
+      <img className="splash-container_image" src={require("../Assets/Pokedex.jpg")} alt="" />
       <div id='splash_auth-container' />
       <div id='splash-container' />
     </div>
-    <Modal
+    <Modal className="modal"
       open={openLogin}
       onClose={handleLoginClose}
       aria-labelledby="simple-modal-title"
@@ -85,7 +85,7 @@ const Splash = ({ authenticated, setAuthenticated }) => {
     >
       <LoginForm authenticated={authenticated} setAuthenticated={setAuthenticated} />
     </ Modal>
-    <Modal
+    <Modal className="modal"
       open={openSignUp}
       onClose={handleSignupClose}
       aria-labelledby="simple-modal-title"

@@ -15,6 +15,13 @@
     /* border: 1px solid black; */
 }
 
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
 .login-form_email {
     /* border: 1px solid black; */
 }

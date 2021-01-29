@@ -16,6 +16,10 @@
     margin-top: 235px;
 }
 
+/* .modal {
+    height: 75px;
+} */
+
 .pokedex-power-button:hover {
     background-color: red;
 }

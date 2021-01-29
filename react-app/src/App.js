@@ -48,12 +48,17 @@ function App() {
           </div>
         </ProtectedRoute>
         <Route exact path="/">
-          {/* <Banner /> */}
-          <Splash authenticated={authenticated}
-            setAuthenticated={setAuthenticated}/>
-          {/* <LogoutButton authenticated={authenticated}
-            setAuthenticated={setAuthenticated}/> */}
-          {/* <Footer /> */}
+          <div className="splash-page_container">
+            <div className="splash-page_title-container">
+              <div className="splash-page_title">Power up Your Pokedex and Start Your Adventure</div>
+            </div>
+            {/* <Banner /> */}
+            <Splash authenticated={authenticated}
+              setAuthenticated={setAuthenticated}/>
+            {/* <LogoutButton authenticated={authenticated}
+              setAuthenticated={setAuthenticated}/> */}
+            <Footer />
+          </div>
         </Route>
         <Route path="/login" exact={true}>
           <LoginForm

@@ -15,6 +15,14 @@
     /* border: 1px solid black; */
 }
 
-.login-form_email {
+.login-form {
     /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.submit-button {
+    margin-bottom: 150px;
 }
