@@ -39,7 +39,8 @@ function App() {
       <Switch>
         <ProtectedRoute exact path="/team-builder" authenticated={authenticated}>
           <div className='team-builder_container'>
-            <Banner />
+            <div id="team-builder_screen"></div>
+            <Banner setAuthenticated={setAuthenticated} />
             {/* <DragDropContext onDragEnd={onDragEnd}> */}
             <Pokemons />
             <PokemonStage />

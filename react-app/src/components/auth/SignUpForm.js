@@ -37,7 +37,7 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
   };
 
   if (authenticated) {
-    return <Redirect to="/app" />;
+    return <Redirect to="/team-builder" />;
   }
 
   return (

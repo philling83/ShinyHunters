@@ -4,12 +4,31 @@ import ReactDOM from 'react-dom';
 import { Draggable } from 'react-beautiful-dnd'
 import "./PokemonCards.css"
 
+let stagingAreaArray = [false, false, false, false, false, false];
 
 const PokemonCards = (props) => {
 
     const addToTeam = () => {
+
+        let screen = document.getElementById('team-builder_screen')
+        let buildingScreen = (
+            <div id="staging-area_build" className="staging-area_build">Hello</div>
+        )
+        let submitScreen = (
+            // <div className="staging-area_submit_container">
+            <div id="staging-area_submit" className="staging-area_submit">Submit Your Team</div>
+            // </div>
+        )
+
         const removeFromTeam = (e) => {
+            // console.log(screen.hasChildNodes())
+            if (screen.hasChildNodes()) {
+                ReactDOM.unmountComponentAtNode(document.getElementById('team-builder_screen'))
+            }
+
             let id = e.target.parentNode.parentNode.id.slice(-1)
+            stagingAreaArray[id - 1] = false
+            console.log(stagingAreaArray)
             ReactDOM.unmountComponentAtNode(document.getElementById(`staging-area-${id}`))
         }
 
@@ -25,8 +44,18 @@ const PokemonCards = (props) => {
             if (stagingArea.innerHTML) {
                 continue;
             } else {
+                stagingAreaArray[i - 1] = true
+                console.log(stagingAreaArray)
                 ReactDOM.render(element, stagingArea)
                 break;
+            }
+        }
+
+        if (!stagingAreaArray.includes(false)) {
+            ReactDOM.render(submitScreen, screen)
+        } else {
+            if (screen.hasChildNodes()) {
+                ReactDOM.unmountComponentAtNode(document.getElementById('staging-area_submit'))
             }
         }
     }

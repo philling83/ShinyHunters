@@ -9,16 +9,16 @@ import Button from '@material-ui/core/Button';
 import "./SplashPage.css"
 
 import styled, { keyframes } from 'styled-components';
-import { fadeInDown } from 'react-animations';
+import { fadeIn } from 'react-animations';
 import { Flash } from 'react-animations';
 
-const FlashAnimation = keyframes`${Flash}`;
-const FlashLogoDiv = styled.div`
-  animation: infinite 20s ${FlashAnimation};
+const FadeInAnimation = keyframes`${fadeIn}`;
+const FadeInLogoDiv = styled.div`
+  animation: 5s ${FadeInAnimation};
 `;
 
-const FlashAuthDiv = styled.div`
-  animation: infinite 20s ${FlashAnimation};
+const FadeInAuthDiv = styled.div`
+  animation: 8s ${FadeInAnimation};
 `;
 
 const Splash = ({ authenticated, setAuthenticated }) => {
@@ -44,12 +44,12 @@ const Splash = ({ authenticated, setAuthenticated }) => {
 
   const renderAuthButtons = () => {
     let element2 = (
-      <FlashLogoDiv>
+      <FadeInLogoDiv>
         <img className="splash-container_logo" src={require("../Assets/logo2.png")} alt="" />
-      </FlashLogoDiv>
+      </FadeInLogoDiv>
     )
     let element = (
-      <FlashAuthDiv>
+      <FadeInAuthDiv>
         <div className="splash_auth-buttons">
           <div className="splash_login-button">
             <Button variant="outlined" color="secondary" onClick={handleLoginOpen}>
@@ -62,7 +62,7 @@ const Splash = ({ authenticated, setAuthenticated }) => {
             </Button>
           </div>
         </div>
-      </FlashAuthDiv>
+      </FadeInAuthDiv>
     )
     ReactDOM.render(element2, document.getElementById('splash-container'))
     ReactDOM.render(element, document.getElementById('splash_auth-container'))

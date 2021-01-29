@@ -15,3 +15,22 @@
     align-items: center;
     flex-direction: column;
 }
+
+.staging-area_build {
+    border: 1px solid red
+}
+
+.staging-area_submit {
+    /* border: 1px solid green; */
+    position: absolute;
+    display: flex;
+    font-size: 25px;
+    color: white;
+    background-color: black;
+    margin-left: 589px;
+    margin-top: 205px;
+    height: 204px;
+    width: 368px;
+    align-items: center;
+    justify-content: center;
+}
