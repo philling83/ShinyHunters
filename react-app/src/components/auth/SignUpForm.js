@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../services/auth';
 import Paper from '@material-ui/core/Paper';
+import TextField from '@material-ui/core/TextField';
 import "./SignUpForm.css"
 
 const SignUpForm = ({authenticated, setAuthenticated}) => {
@@ -46,44 +47,48 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
         <form className="signup-form" onSubmit={onSignUp}>
           <div>
             {/* <label>User Name</label> */}
-            <input
+            <TextField id="standard-basic" label="Username" value={username} onChange={updateUsername} />
+            {/* <input
               type="text"
               name="username"
               placeholder="User Name"
               onChange={updateUsername}
               value={username}
-            ></input>
+            ></input> */}
           </div>
           <div>
             {/* <label>Email</label> */}
-            <input
+            <TextField id="standard-basic" label="Email" type="email" value={email} onChange={updateEmail} />
+            {/* <input
               type="text"
               name="email"
               placeholder="Email"
               onChange={updateEmail}
               value={email}
-            ></input>
+            ></input> */}
           </div>
           <div>
             {/* <label>Password</label> */}
-            <input
+            <TextField id="standard-basic" label="Password" type="password" value={password} onChange={updatePassword} />
+            {/* <input
               type="password"
               name="password"
               placeholder="Password"
               onChange={updatePassword}
               value={password}
-            ></input>
+            ></input> */}
           </div>
           <div>
             {/* <label>Repeat Password</label> */}
-            <input
+            <TextField id="standard-basic" label="Confirm Password" type="password" value={repeatPassword} onChange={updateRepeatPassword} />
+            {/* <input
               type="password"
               name="repeat_password"
               placeholder="Confirm Password"
               onChange={updateRepeatPassword}
               value={repeatPassword}
               required={true}
-            ></input>
+            ></input> */}
           </div>
           <button type="submit">Sign Up</button>
         </form>

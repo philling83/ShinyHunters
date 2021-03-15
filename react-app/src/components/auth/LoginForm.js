@@ -42,24 +42,24 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
             ))}
           </div>
           <div className="login-form_email">
-            {/* <TextField id="standard-basic" label="Email" type="email" value={email} onChange={updateEmail} /> */}
-            <input
+            <TextField id="standard-basic" label="Email" type="email" value={email} onChange={updateEmail} />
+            {/* <input
               name="email"
               type="text"
               placeholder="Email"
               value={email}
               onChange={updateEmail}
-            />
+            /> */}
           </div>
           <div className="login-form_password">
-            {/* <TextField id="standard-basic" label="Password" type="password" value={password} onChange={updatePassword} /> */}
-            <input
+            <TextField id="standard-basic" label="Password" type="password" value={password} onChange={updatePassword} />
+            {/* <input
               name="password"
               type="password"
               placeholder="Password"
               value={password}
               onChange={updatePassword}
-            />
+            /> */}
           </div>
           <button className="submit-button" type="submit">Login</button>
         </form>

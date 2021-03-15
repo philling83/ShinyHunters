@@ -1,9 +1,11 @@
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import pokemonReducer from "./pokemons";
+import teamReducer from "./teams";
 import thunk from "redux-thunk";
 
 const rootReducer = combineReducers({
-    pokemons: pokemonReducer
+    pokemons: pokemonReducer,
+	teams: teamReducer,
 });
 
 let enhancer;

@@ -11,7 +11,7 @@ const Banner = ({setAuthenticated}) => {
         <>
         {/* <AppBar> */}
             <div className="banner-container">
-                <a className="banner" href="/app">
+                <a className="banner">
                     <img className="banner-logo" src={require("../Assets/logo.png")} alt="" />
                 </a>
                 <LogoutButton setAuthenticated={setAuthenticated} />
