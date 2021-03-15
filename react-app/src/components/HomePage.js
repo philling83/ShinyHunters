@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
+import PokemonCards2 from "./PokemonCards2"
 import * as team_actions from '../store/teams'
 
 const HomePage = () => {
@@ -14,6 +15,7 @@ const HomePage = () => {
 
         dispatch(team_actions.allTeams())
         setLoaded(true)
+
     }, [dispatch])
 
     return (
@@ -21,7 +23,7 @@ const HomePage = () => {
             <>
                 <div>
                     {
-                        Object.values(teams).map((team) => team.pokemons.map(pokemons => <div>{pokemons.name}</div>))
+                        Object.values(teams).map((team) => <PokemonCards2 team={team}/>)
                     }
                 </div>
             </>
