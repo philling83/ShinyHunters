@@ -28,7 +28,7 @@
 
 .team-builder_nav {
     /* position: absolute; */
-    /* right: 10px; */
+    margin-right: 10px;
     /* top: 31px; */
     text-decoration: none;
     color: red;
