@@ -17,6 +17,11 @@ const Pokemons = () => {
     const pokemons = useSelector((state) => state.pokemons)
     // const [mouseSwipe, setMouseSwipe] = useState(false)
     const [loaded, setLoaded] = useState(false);
+    const [teamName, setTeamName] = useState("")
+
+    const updateTeamName = e => {
+        setTeamName(e.target.value)
+    }
 
     useEffect(() => {
 
@@ -52,9 +57,12 @@ const Pokemons = () => {
             <>
             <Carousel className="carousel" breakPoints={breakPoints} showArrows={false} pagination={false}>
                 {
-                    Object.values(pokemons).map((pokemon, index) => <PokemonCards key={pokemon.id} pokemon={pokemon} index={index} />)
+                    Object.values(pokemons).map((pokemon, index) => <PokemonCards key={pokemon.id} pokemon={pokemon} teamName={teamName} index={index} />)
                 }
             </Carousel>
+            <div className="teamName">
+                <input placeHolder="Enter team name" onChange={updateTeamName}/>
+            </div>
             {/* <DragDropContext onDragEnd={onDragEnd}> */}
                 {/* <Droppable droppableId="1" direction="vertical" type="pokemon-carousel"> */}
                 {/* {(provided) => ( */}

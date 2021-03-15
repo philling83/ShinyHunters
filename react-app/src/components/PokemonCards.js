@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 // import {Paper} from '@material-ui/core'
 import ReactDOM from 'react-dom';
 import { useHistory } from 'react-router-dom'
@@ -9,13 +9,14 @@ import "./PokemonCards.css"
 let stagingAreaArray = ["", "", "", "", "", ""];
 
 const PokemonCards = (props) => {
+    console.log(props)
 
     const history = useHistory()
 
     const submitTeam = async () => {
 
         let data = {
-            name: "third submit",
+            name: props.teamName,
             user_id: 1,
         }
 
@@ -29,7 +30,19 @@ const PokemonCards = (props) => {
 
         const resJSON = await response.json()
 
-        history.push("/home")
+        // console.log(resJSON)
+
+        stagingAreaArray.forEach(async (element) => {
+
+            const secondResponse = await fetch(`api/teams/${resJSON.id}/${element}`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+            })
+        })
+
+        await history.push("/home")
     }
 
     const addToTeam = () => {
@@ -68,7 +81,7 @@ const PokemonCards = (props) => {
             if (stagingArea.innerHTML) {
                 continue;
             } else {
-                stagingAreaArray[i - 1] = props.pokemon
+                stagingAreaArray[i - 1] = props.pokemon.id
                 console.log(stagingAreaArray)
                 ReactDOM.render(element, stagingArea)
                 break;
@@ -89,10 +102,13 @@ const PokemonCards = (props) => {
             // {(provided) => (
                 // <div {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
                     // <Paper>
+                    <>
                         <div className='carousel_pokemon-cards' onClick={addToTeam}>
                             <div className="carousel_pokemon-title">{props.pokemon.name}</div>
                             <img src={props.pokemon.sprite} alt=""/>
                         </div>
+
+                    </>
                     // </Paper>
                 // </div>
             // )}

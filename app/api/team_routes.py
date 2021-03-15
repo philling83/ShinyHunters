@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify, request
 from flask_login import login_required
-from ..models import Team
+from ..models import Team, Pokemon
 from app.models import db
 
 team_routes = Blueprint('teams', __name__)
@@ -33,6 +33,17 @@ def delete_team(team_id):
     team = Team.query.get(team_id)
 
     db.session.delete(team)
+    db.session.commit()
+
+    return team.to_dict()
+
+@team_routes.route('/<team_id>/<pokemon_id>', methods=['POST'])
+# @login_required
+def add_pokemon_to_team(team_id, pokemon_id):
+
+    team = Team.query.get(team_id)
+    pokemon = Pokemon.query.get(pokemon_id)
+    team.pokemons.append(pokemon)
     db.session.commit()
 
     return team.to_dict()

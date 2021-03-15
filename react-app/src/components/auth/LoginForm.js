@@ -28,6 +28,13 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
     setPassword(e.target.value);
   };
 
+  const demoSubmit = async () => {
+    setEmail("demo@aa.io")
+    setPassword("password")
+    await login("demo@aa.io", "password")
+    setAuthenticated(true)
+  }
+
   if (authenticated) {
     return <Redirect to="/home" />;
   }
@@ -61,7 +68,10 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
               onChange={updatePassword}
             /> */}
           </div>
-          <button className="submit-button" type="submit">Login</button>
+          <div>
+            <button className="submit-button" type="submit">Login</button>
+            <button className="submit-button" type="submit" onClick={demoSubmit}>Demo User</button>
+          </div>
         </form>
       </Paper>
     </div>
