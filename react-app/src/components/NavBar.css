@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border: 1px solid black; */
+    border: 1px solid black;
 }
 
 .navbar-logo {
@@ -15,5 +15,6 @@
     position: absolute;
     right: 10px;
     top: 31px;
+    text-decoration: none;
     /* border: 1px solid black; */
 }

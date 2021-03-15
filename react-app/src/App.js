@@ -39,6 +39,7 @@ function App() {
     <BrowserRouter>
       <Switch>
         <ProtectedRoute exact path="/home" authenticated={authenticated}>
+          <NavBar />
           <HomePage setAuthenticated={setAuthenticated} />
         </ProtectedRoute>
         <ProtectedRoute exact path="/team-builder" authenticated={authenticated}>

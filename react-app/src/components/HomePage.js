@@ -19,9 +19,11 @@ const HomePage = () => {
     return (
         loaded && (
             <>
-                {
-                    Object.values(teams).map((team) => team.pokemons.map(pokemons => <div>{pokemons.name}</div>))
-                }
+                <div>
+                    {
+                        Object.values(teams).map((team) => team.pokemons.map(pokemons => <div>{pokemons.name}</div>))
+                    }
+                </div>
             </>
         )
     )

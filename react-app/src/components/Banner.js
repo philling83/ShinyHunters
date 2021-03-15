@@ -14,6 +14,7 @@ const Banner = ({setAuthenticated}) => {
                 <a className="banner">
                     <img className="banner-logo" src={require("../Assets/logo.png")} alt="" />
                 </a>
+                <a href="/home">Home</a>
                 <LogoutButton setAuthenticated={setAuthenticated} />
             </div>
             {/* <Typography variant="h6">
