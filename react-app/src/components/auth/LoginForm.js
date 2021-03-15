@@ -29,7 +29,7 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
   };
 
   if (authenticated) {
-    return <Redirect to="/team-builder" />;
+    return <Redirect to="/home" />;
   }
 
   return (

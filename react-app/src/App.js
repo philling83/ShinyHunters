@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Splash from "./components/SplashPage";
+import HomePage from "./components/HomePage";
 import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
 import NavBar from "./components/NavBar";
@@ -37,6 +38,9 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
+        <ProtectedRoute exact path="/home" authenticated={authenticated}>
+          <HomePage setAuthenticated={setAuthenticated} />
+        </ProtectedRoute>
         <ProtectedRoute exact path="/team-builder" authenticated={authenticated}>
           <div className='team-builder_container'>
             <div id="team-builder_screen"></div>
