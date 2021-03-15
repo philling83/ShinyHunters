@@ -3,8 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import * as pokemon_actions from '../store/pokemons'
 import PokemonCards from './PokemonCards'
 import Carousel from 'react-elastic-carousel'
-import { DragDropContext } from 'react-beautiful-dnd'
-import { Droppable } from 'react-beautiful-dnd'
+// import { DragDropContext } from 'react-beautiful-dnd'
+// import { Droppable } from 'react-beautiful-dnd'
 import "./Pokemons.css"
 
 
@@ -15,7 +15,7 @@ const Pokemons = () => {
 
     const dispatch = useDispatch()
     const pokemons = useSelector((state) => state.pokemons)
-    const [mouseSwipe, setMouseSwipe] = useState(false)
+    // const [mouseSwipe, setMouseSwipe] = useState(false)
     const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {

@@ -1,7 +1,7 @@
 import React from 'react';
-import {Paper} from '@material-ui/core'
+// import {Paper} from '@material-ui/core'
 import ReactDOM from 'react-dom';
-import { Draggable } from 'react-beautiful-dnd'
+// import { Draggable } from 'react-beautiful-dnd'
 import "./PokemonCards.css"
 
 let stagingAreaArray = [false, false, false, false, false, false];
@@ -11,9 +11,9 @@ const PokemonCards = (props) => {
     const addToTeam = () => {
 
         let screen = document.getElementById('team-builder_screen')
-        let buildingScreen = (
-            <div id="staging-area_build" className="staging-area_build">Hello</div>
-        )
+        // let buildingScreen = (
+        //     <div id="staging-area_build" className="staging-area_build">Hello</div>
+        // )
         let submitScreen = (
             // <div className="staging-area_submit_container">
             <div id="staging-area_submit" className="staging-area_submit">Submit Your Team</div>
@@ -28,7 +28,7 @@ const PokemonCards = (props) => {
 
             let id = e.target.parentNode.parentNode.id.slice(-1)
             stagingAreaArray[id - 1] = false
-            console.log(stagingAreaArray)
+            // console.log(stagingAreaArray)
             ReactDOM.unmountComponentAtNode(document.getElementById(`staging-area-${id}`))
         }
 

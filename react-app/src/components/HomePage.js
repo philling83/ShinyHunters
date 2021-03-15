@@ -23,7 +23,7 @@ const HomePage = () => {
             <>
                 <div>
                     {
-                        Object.values(teams).map((team) => <PokemonCards2 team={team}/>)
+                        Object.values(teams).map((team) => <PokemonCards2 key={team.id} team={team}/>)
                     }
                 </div>
             </>

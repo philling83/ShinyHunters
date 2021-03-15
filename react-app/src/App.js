@@ -14,7 +14,7 @@ import User from "./components/User";
 import Pokemons from "./components/Pokemons"
 import PokemonStage from "./components/PokemonStage"
 import { authenticate } from "./services/auth";
-import { DragDropContext } from 'react-beautiful-dnd'
+// import { DragDropContext } from 'react-beautiful-dnd'
 import './App.css'
 
 function App() {

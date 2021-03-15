@@ -1,16 +1,16 @@
-import { requirePropFactory } from '@material-ui/core';
+// import { requirePropFactory } from '@material-ui/core';
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import Modal from '@material-ui/core/Modal';
 import LoginForm from "./auth/LoginForm"
 import SignUpForm from "./auth/SignUpForm"
-import LogoutButton from './auth/LogoutButton';
+// import LogoutButton from './auth/LogoutButton';
 import Button from '@material-ui/core/Button';
 import "./SplashPage.css"
 
 import styled, { keyframes } from 'styled-components';
 import { fadeIn } from 'react-animations';
-import { Flash } from 'react-animations';
+// import { Flash } from 'react-animations';
 
 const FadeInAnimation = keyframes`${fadeIn}`;
 const FadeInLogoDiv = styled.div`

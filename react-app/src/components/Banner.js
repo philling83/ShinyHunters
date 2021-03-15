@@ -1,7 +1,7 @@
 import React from 'react';
 import "./Banner.css"
-import AppBar from '@material-ui/core/AppBar';
-import Typography from '@material-ui/core/Typography';
+// import AppBar from '@material-ui/core/AppBar';
+// import Typography from '@material-ui/core/Typography';
 import LogoutButton from "./auth/LogoutButton"
 
 
@@ -11,10 +11,9 @@ const Banner = ({setAuthenticated}) => {
         <>
         {/* <AppBar> */}
             <div className="banner-container">
-                <a className="banner">
+                <a className="banner" href="/home">
                     <img className="banner-logo" src={require("../Assets/logo.png")} alt="" />
                 </a>
-                <a href="/home">Home</a>
                 <LogoutButton setAuthenticated={setAuthenticated} />
             </div>
             {/* <Typography variant="h6">

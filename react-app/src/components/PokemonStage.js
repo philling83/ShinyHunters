@@ -1,11 +1,11 @@
 import React from 'react';
-import { useSelector } from "react-redux";
-import { Droppable } from 'react-beautiful-dnd'
+// import { useSelector } from "react-redux";
+// import { Droppable } from 'react-beautiful-dnd'
 import "./PokemonStage.css";
 
 
 const PokemonStage = () => {
-    const pokemons = useSelector((state) => state.pokemons)
+    // const pokemons = useSelector((state) => state.pokemons)
 
     return (
         <>

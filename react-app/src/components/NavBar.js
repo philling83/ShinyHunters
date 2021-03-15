@@ -1,6 +1,6 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import LogoutButton from './auth/LogoutButton';
+// import { NavLink } from 'react-router-dom';
+// import LogoutButton from './auth/LogoutButton';
 import AppBar from '@material-ui/core/AppBar';
 import Typography from '@material-ui/core/Typography';
 import "./NavBar.css"
