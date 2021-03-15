@@ -1,7 +1,15 @@
+.team {
+    display: flex;
+    justify-content: center;
+}
+
 .team_container {
     display: flex;
     justify-content: center;
-    /* border: 1px solid black; */
+    width: fit-content;
+    border: 1px solid red;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 .team_container_display {

@@ -1,12 +1,32 @@
 import React from 'react';
 // import {Paper} from '@material-ui/core'
 import ReactDOM from 'react-dom';
+import { Redirect } from "react-router-dom";
 // import { Draggable } from 'react-beautiful-dnd'
 import "./PokemonCards.css"
 
-let stagingAreaArray = [false, false, false, false, false, false];
+let stagingAreaArray = ["", "", "", "", "", ""];
 
 const PokemonCards = (props) => {
+
+    const submitTeam = async () => {
+
+        let data = {
+            name: "second submit",
+            user_id: 1,
+            pokemons: stagingAreaArray,
+        }
+
+        const response = await fetch("/api/teams/create-team", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+
+        console.log(response)
+    }
 
     const addToTeam = () => {
 
@@ -16,7 +36,7 @@ const PokemonCards = (props) => {
         // )
         let submitScreen = (
             // <div className="staging-area_submit_container">
-            <div id="staging-area_submit" className="staging-area_submit">Submit Your Team</div>
+            <button id="staging-area_submit" className="staging-area_submit" onClick={submitTeam}>Submit Your Team</button>
             // </div>
         )
 
@@ -27,7 +47,7 @@ const PokemonCards = (props) => {
             }
 
             let id = e.target.parentNode.parentNode.id.slice(-1)
-            stagingAreaArray[id - 1] = false
+            stagingAreaArray[id - 1] = ""
             // console.log(stagingAreaArray)
             ReactDOM.unmountComponentAtNode(document.getElementById(`staging-area-${id}`))
         }
@@ -44,14 +64,14 @@ const PokemonCards = (props) => {
             if (stagingArea.innerHTML) {
                 continue;
             } else {
-                stagingAreaArray[i - 1] = true
+                stagingAreaArray[i - 1] = props.pokemon
                 console.log(stagingAreaArray)
                 ReactDOM.render(element, stagingArea)
                 break;
             }
         }
 
-        if (!stagingAreaArray.includes(false)) {
+        if (!stagingAreaArray.includes("")) {
             ReactDOM.render(submitScreen, screen)
         } else {
             if (screen.hasChildNodes()) {

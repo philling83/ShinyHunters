@@ -39,13 +39,13 @@ function App() {
     <BrowserRouter>
       <Switch>
         <ProtectedRoute exact path="/home" authenticated={authenticated}>
-          <NavBar />
+          <NavBar setAuthenticated={setAuthenticated}/>
           <HomePage setAuthenticated={setAuthenticated} />
         </ProtectedRoute>
         <ProtectedRoute exact path="/team-builder" authenticated={authenticated}>
           <div className='team-builder_container'>
             <div id="team-builder_screen"></div>
-            <Banner setAuthenticated={setAuthenticated} />
+            <NavBar setAuthenticated={setAuthenticated} />
             {/* <DragDropContext onDragEnd={onDragEnd}> */}
             <Pokemons />
             <PokemonStage />

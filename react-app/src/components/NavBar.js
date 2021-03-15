@@ -9,12 +9,16 @@ const NavBar = ({ setAuthenticated }) => {
   return (
     <>
         <AppBar position="static">
-            <div className="navbar">
-                <img className="navbar-logo" src={require("../Assets/logo.png")} alt="" />
-            <Typography variant="h6">
+          <div className="navbar">
+            <a className="navbar_logo_container" href="/home">
+              <img className="navbar-logo" src={require("../Assets/logo.png")} alt="" />
+            </a>
+            <div className="navbar_nav_container">
+              <Typography variant="h6">
                 <a className="team-builder_nav" href='/team-builder'>Team Builder</a>
-            </Typography>
+              </Typography>
             </div>
+          </div>
         </AppBar>
     </>
   );
