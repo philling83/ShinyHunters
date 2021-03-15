@@ -16,12 +16,11 @@ const HomePage = () => {
         setLoaded(true)
     }, [dispatch])
 
-    console.log(teams)
     return (
         loaded && (
             <>
                 {
-                    Object.values(teams).map((team) => <div>{team.name}</div>)
+                    Object.values(teams).map((team) => team.pokemons.map(pokemons => <div>{pokemons.name}</div>))
                 }
             </>
         )
