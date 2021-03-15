@@ -1,7 +1,8 @@
 import React from 'react';
 // import {Paper} from '@material-ui/core'
 import ReactDOM from 'react-dom';
-import { Redirect } from "react-router-dom";
+import { useHistory } from 'react-router-dom'
+// import { Redirect } from "react-router-dom";
 // import { Draggable } from 'react-beautiful-dnd'
 import "./PokemonCards.css"
 
@@ -9,12 +10,13 @@ let stagingAreaArray = ["", "", "", "", "", ""];
 
 const PokemonCards = (props) => {
 
+    const history = useHistory()
+
     const submitTeam = async () => {
 
         let data = {
-            name: "second submit",
+            name: "third submit",
             user_id: 1,
-            pokemons: stagingAreaArray,
         }
 
         const response = await fetch("/api/teams/create-team", {
@@ -25,7 +27,9 @@ const PokemonCards = (props) => {
             body: JSON.stringify(data)
         })
 
-        console.log(response)
+        const resJSON = await response.json()
+
+        history.push("/home")
     }
 
     const addToTeam = () => {
