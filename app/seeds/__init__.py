@@ -5,6 +5,7 @@ from .methods import seed_methods, undo_methods
 from .regions import seed_regions, undo_regions
 from .types import seed_types, undo_types
 from .pokemons import seed_pokemons, undo_pokemons
+from .teams import seed_teams, undo_teams
 from .pokeballs import seed_pokeballs, undo_pokeballs
 from .pokemon_types import seed_pokemon_types, undo_pokemon_types
 from .pokemon_teams import seed_pokemon_teams, undo_pokemon_teams
@@ -16,20 +17,22 @@ seed_commands = AppGroup('seed')
 # Creates the `flask seed all` command
 @seed_commands.command('all')
 def seed():
-    # seed_users()
-    # seed_games()
-    # seed_methods()
-    # seed_regions()
-    # seed_types()
-    # seed_pokemons()
-    # seed_pokeballs()
-    # seed_pokemon_types()
+    seed_users()
+    seed_games()
+    seed_methods()
+    seed_regions()
+    seed_types()
+    seed_pokemons()
+    seed_pokeballs()
+    seed_pokemon_types()
+    seed_teams()
     seed_pokemon_teams()
     # Add other seed functions here
 
 # Creates the `flask seed undo` command
 @seed_commands.command('undo')
 def undo():
+    undo_teams()
     undo_pokemon_teams()
     undo_pokemon_types()
     undo_pokeballs()

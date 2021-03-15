@@ -3,8 +3,8 @@ from app.models import db, pokemon_teams
 
 def seed_pokemon_teams():
     db.session.execute("INSERT INTO pokemon_teams (team_id, pokemon_id) \
-                       VALUES (2, 9), (2, 62), (2, 130), (2, 134), (2, 121), (2, 99), \
-                       (3, 6), (3, 59), (3, 78), (3, 136), (3, 38), (3, 146)"
+                       VALUES (1, 9), (1, 62), (1, 130), (1, 134), (1, 121), (1, 99), \
+                       (2, 6), (2, 59), (2, 78), (2, 136), (2, 38), (2, 146)"
                       )
     db.session.commit()
 

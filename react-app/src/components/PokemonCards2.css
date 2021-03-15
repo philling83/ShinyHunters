@@ -1,4 +1,11 @@
 .team_container {
     display: flex;
+    justify-content: center;
     /* border: 1px solid black; */
+}
+
+.team_container_display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
